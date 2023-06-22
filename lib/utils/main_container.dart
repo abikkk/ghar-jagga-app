@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ghar_jagga/controllers/main_controller.dart';
-import 'package:ghar_jagga/screens/account_settings.dart';
-import 'package:ghar_jagga/screens/cart.dart';
-import 'package:ghar_jagga/screens/home.dart';
 import 'package:ghar_jagga/utils/custom_nav_bar.dart';
+import '../screens/modules/account_settings.dart';
+import '../screens/modules/cart.dart';
+import '../screens/modules/home.dart';
 
 class MainContainer extends StatefulWidget {
   const MainContainer({super.key});
@@ -22,10 +22,14 @@ class _MainContainerState extends State<MainContainer> {
       children: [
         PageView(
           controller: _controller.pageController,
-          children: const <Widget>[
-            Cart(),
-            HomeScreen(title: 'Ghar Jagga', subtitle: "Nepal's Real Estate"),
-            AccountSettings()
+          children: <Widget>[
+            Cart(mainController: _controller),
+            HomeScreen(
+              title: 'Ghar Jagga',
+              subtitle: "Nepal's Real Estate",
+              mainController: _controller,
+            ),
+            AccountSettings(mainController: _controller)
           ],
         ),
         CustomNavBar(

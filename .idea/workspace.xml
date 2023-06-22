@@ -10,24 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2e13a75-e6a8-4adf-a013-2db521e2f18d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/controllers/main_controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/account_settings.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/cart.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/login.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/sign_up.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/view_property.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/custom_nav_bar.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/function_utils.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils/main_container.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ghar_jagga.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ghar_jagga.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/main_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/controllers/main_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/account_settings.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/cart.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/main_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/main_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/ui_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/ui_utils.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +63,7 @@
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "A:/Documents/Own/ghar-jagga",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>

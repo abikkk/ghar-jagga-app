@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ghar_jagga/screens/home.dart';
 import 'package:ghar_jagga/screens/login.dart';
 import 'package:ghar_jagga/utils/custom_app_theme_data.dart';
 import 'package:ghar_jagga/utils/custom_constants.dart';
@@ -36,24 +35,6 @@ class MyApp extends StatelessWidget {
             name: CustomConstants.routeSignUp,
             page: () => const SignUpScreen(),
           ),
-          // GetPage(
-          //   name: CustomConstants.routeMenu,
-          //   page: () => MenuView(
-          //     mainController: mainController,
-          //   ),
-          // ),
-          // GetPage(
-          //   name: CustomConstants.routeLogin,
-          //   page: () => const LoginView(),
-          // ),
-          // GetPage(
-          //   name: CustomConstants.routeSignUp,
-          //   page: () => const SignUpView(),
-          // ),
-          // GetPage(
-          //   name: CustomConstants.routeAccount,
-          //   page: () => const AccountView(),
-          // ),
         ]);
   }
 }
