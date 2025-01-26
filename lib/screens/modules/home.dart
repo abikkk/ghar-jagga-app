@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ghar_jagga/controllers/main_controller.dart';
-import 'package:ghar_jagga/utils/custom_constants.dart';
-import 'package:ghar_jagga/utils/ui_utils.dart';
+import 'package:get/get.dart';
+import '../../controllers/main_controller.dart';
+import '../../utils/custom_constants.dart';
+import '../../utils/ui_utils.dart';
+import '../../utils/custom_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(
@@ -21,27 +23,63 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: const CustomAppBar(
+        title: "Let's find your dream property",
+        actionWidgets: null,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            UiUtils.customBox(
-              height: 300,
-              child: Stack(
-                children: [
-                  PageView(
-                      controller: widget.mainController.featuredController,
-                      children: [
-                        for (int i = 0; i < 20; i++) UiUtils.customCard(i + 1)
-                      ]),
-                  UiUtils.customCardNavBtn(widget.mainController)
-                ],
+            UiUtils.customSearchBar(),
+            Obx(
+              () => UiUtils.customBox(
+                height: widget.mainController.selectedFilters.isEmpty ? 0 : 50,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: widget.mainController.selectedFilters.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int i) {
+                      return UiUtils.customClips(
+                          widget.mainController,
+                          CustomConstants.propertyType[
+                              widget.mainController.selectedFilters[i]],
+                          widget.mainController.selectedFilters[i]);
+                    }),
               ),
             ),
+            Obx(
+              () => UiUtils.customContainer(
+                vPad: 20,
+                hMargin: 10,
+                height: 500,
+                child: ListView.builder(
+                    itemCount: widget.mainController.sortedProperties.isEmpty
+                        ? widget.mainController.allProperties.length
+                        : widget.mainController.sortedProperties.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int i) {
+                      return UiUtils.customListTiles(
+                          widget.mainController.sortedProperties.isEmpty
+                              ? widget.mainController.allProperties[i]
+                              : widget.mainController.sortedProperties[i]);
+                    }),
+              ),
+            )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey.shade600,
+        onPressed: () {
+          UiUtils.bottomSheet(widget.mainController,
+              hPad: 25,
+              vPad: 10,
+              topL: 30,
+              topR: 30,
+              isDismissible: true,
+              enableDrag: true);
+        },
+        child: const Icon(Icons.filter_alt_rounded),
       ),
     );
   }

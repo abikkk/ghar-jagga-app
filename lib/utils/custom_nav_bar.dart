@@ -1,51 +1,49 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../utils/function_utils.dart';
 import '../controllers/main_controller.dart';
 import 'ui_utils.dart';
 
-class CustomNavBar extends StatefulWidget {
+class CustomNavBar extends StatelessWidget {
   const CustomNavBar({super.key, required this.mainController});
 
   final MainController mainController;
 
   @override
-  State<CustomNavBar> createState() => _CustomNavBarState();
-}
-
-class _CustomNavBarState extends State<CustomNavBar> {
-  @override
   Widget build(BuildContext context) {
-    return Positioned(
-        bottom: 25.0,
-        left: 50,
-        right: 50,
-        height: 50,
-        child: UiUtils.customContainer(
-          // width: MediaQuery.of(context).size.width - 100,
-          radius: 20,
-          bgColor: Colors.black26,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              UiUtils.customBox(width: 5),
-              GestureDetector(
-                  onTap: () {
-                    FunctionUtils.changePage(widget.mainController, 0);
-                  },
-                  child: Icon(Icons.shopping_cart_sharp)),
-              GestureDetector(
-                  onTap: () {
-                    FunctionUtils.changePage(widget.mainController, 1);
-                  },
-                  child: Icon(Icons.home)),
-              GestureDetector(
-                  onTap: () {
-                    FunctionUtils.changePage(widget.mainController, 2);
-                  },
-                  child: Icon(Icons.person)),
-              UiUtils.customBox(width: 5),
-            ],
+    return Obx(
+      () => CurvedNavigationBar(
+        color: Colors.black54,
+        backgroundColor: Colors.black26,
+        index: mainController.navIndex.value,
+        height: 45,
+        key: mainController.bottomNavigationKey,
+        animationDuration: const Duration(milliseconds: 222),
+        items: const <Widget>[
+          Icon(
+            Icons.recommend_rounded,
+            color: Colors.white70,
           ),
-        ));
+          Icon(
+            Icons.home,
+            color: Colors.white70,
+          ),
+          Icon(
+            Icons.favorite,
+            color: Colors.white70,
+          ),
+          Icon(
+            Icons.person,
+            color: Colors.white70,
+          ),
+        ],
+        onTap: (index) {
+          mainController.pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 222),
+              curve: Curves.easeInOut);
+        },
+      ),
+    );
   }
 }
